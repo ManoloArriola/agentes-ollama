@@ -1,0 +1,12 @@
+{
+  "excel_path": "data/facturas.xlsx",
+  "output_folder": "salidas",
+  "ollama_model": "llama3",
+  "use_openvino": false,
+  "ollama_options": {
+    "num_gpu": 1,
+    "main_gpu": 0,
+    "low_vram": true,
+    "num_thread": 4
+  }
+}

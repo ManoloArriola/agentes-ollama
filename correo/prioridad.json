@@ -1,0 +1,24 @@
+{
+  "dominios_prioritarios": [
+    "@losagroup.co",
+    "@grupodesidero.com",
+    "@bminversiones.com",
+    "@grupoalta.net",
+    "@grupoaic.co"
+  ],
+  "dominios_medios": [
+    "@gruposis.com",
+    "@proteccionintegral.com.gt"
+  ],
+  "excepciones_prioritarias": [
+    "agottlib@gruposis.com",
+    "noe@gruposis.com",
+    "ilay@gruposis.com",
+    "dazar@gruposis.com",
+    "ipolanco@gruposis.com"
+  ],
+  "ignorar": [
+    "no-reply@dropbox.com",
+    "no-reply@txn.dropbox.com"
+  ]
+}
