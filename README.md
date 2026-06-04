@@ -22,7 +22,7 @@ def generate_with_acceleration(
     Wrapper que selecciona el motor de inferencia.
 
     - Usa Ollama por defecto.
-    - Si `use_openvino=True` e `openvino.runtime` está disponible,
+    - Si `use_openvino=True` y OpenVINO está disponible,
       intenta utilizar OpenVINO como acelerador.
     - Actualmente OpenVINO funciona como placeholder y hace fallback a Ollama.
     """
@@ -225,7 +225,7 @@ agente_common.py
 para utilizar:
 
 ```python
-from openvino.runtime import Core
+from openvino import Core
 ```
 
 ---
@@ -379,11 +379,7 @@ ollama.chat(...)
 use_openvino = True
 ```
 
-Se intenta detectar:
-
-```python
-openvino.runtime
-```
+Se intenta detectar OpenVINO disponible en el entorno.
 
 ---
 

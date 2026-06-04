@@ -19,13 +19,21 @@ def leer_excel(ruta_excel):
     return pd.read_excel(ruta_excel)
 
 
-def resumir_facturacion(df, modelo="llama3", options=None):
+def resumir_facturacion(df, modelo="llama3", options=None, openvino_model_path=None, openvino_tokenizer=None, openvino_device="CPU"):
     texto = df.head(20).to_string(index=False)
     messages = [
         {"role": "system", "content": "Eres un asistente experto en facturación y Excel. Extrae los datos clave y responde en español."},
         {"role": "user", "content": f"Resumen de la tabla de facturación:\n{texto}"},
     ]
-    return generate_with_acceleration(messages, model=modelo, use_openvino=False, options=options)
+    return generate_with_acceleration(
+        messages,
+        model=modelo,
+        use_openvino=False,
+        options=options,
+        openvino_model_path=openvino_model_path,
+        tokenizer_name=openvino_tokenizer,
+        openvino_device=openvino_device,
+    )
 
 
 def main():
@@ -44,6 +52,9 @@ def main():
         df,
         modelo=config.get("ollama_model", "llama3"),
         options=config.get("ollama_options"),
+        openvino_model_path=config.get("openvino_model_path"),
+        openvino_tokenizer=config.get("openvino_tokenizer"),
+        openvino_device=config.get("openvino_device", "CPU"),
     )
     print("Resumen de facturación:")
     print(resumen)

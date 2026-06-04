@@ -1,2 +1,4 @@
 ollama
-openvino
+openvino-runtime
+transformers
+sentencepiece

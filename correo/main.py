@@ -28,12 +28,20 @@ def load_prioridad():
     }
 
 # 🧠 Resumir texto con Ollama
-def resumir_correo(texto, modelo="llama3", use_openvino=False, options=None):
+def resumir_correo(texto, modelo="llama3", use_openvino=False, options=None, openvino_model_path=None, openvino_tokenizer=None, openvino_device="CPU"):
     messages = [
         {"role": "system", "content": "Eres un asistente que resume correos en español."},
         {"role": "user", "content": texto},
     ]
-    return generate_with_acceleration(messages, model=modelo, use_openvino=use_openvino, options=options)
+    return generate_with_acceleration(
+        messages,
+        model=modelo,
+        use_openvino=use_openvino,
+        options=options,
+        openvino_model_path=openvino_model_path,
+        tokenizer_name=openvino_tokenizer,
+        openvino_device=openvino_device,
+    )
 
 # 📬 Obtener correos vía IMAP
 def obtener_correos(config, reglas, cantidad=20):
@@ -100,6 +108,9 @@ def main():
                 modelo=config.get("ollama_model", "llama3"),
                 use_openvino=config.get("use_openvino", False),
                 options=config.get("ollama_options"),
+                openvino_model_path=config.get("openvino_model_path"),
+                openvino_tokenizer=config.get("openvino_tokenizer"),
+                openvino_device=config.get("openvino_device", "CPU"),
             )
             salida = f"\n📩 Correo {i}: {correo['asunto']} (de {correo['de']})\nResumen: {resumen}\n"
             print(salida)
@@ -113,6 +124,9 @@ def main():
                 modelo=config.get("ollama_model", "llama3"),
                 use_openvino=config.get("use_openvino", False),
                 options=config.get("ollama_options"),
+                openvino_model_path=config.get("openvino_model_path"),
+                openvino_tokenizer=config.get("openvino_tokenizer"),
+                openvino_device=config.get("openvino_device", "CPU"),
             )
             salida = f"\n📩 Correo {i}: {correo['asunto']} (de {correo['de']})\nResumen: {resumen}\n"
             print(salida)
