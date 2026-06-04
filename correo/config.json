@@ -3,7 +3,7 @@
   "imap_port": 993,
   "email": "marriola@gruposis.com",
   "password": "Grup0s1sEje",
-  "ollama_model": "llama3",
+  "ollama_model": "llama3.2:3b",
   "summary_prompt": "Resume el contenido del correo en español con los puntos más importantes. y organizalos por secciones: 1. Asunto, 2. Remitente, 3. Fecha, 4. Contenido del correo, 5. Adjuntos (si los hay).",
   "use_openvino": false,
   "openvino_model_path": "",

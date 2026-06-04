@@ -1,7 +1,7 @@
 {
   "excel_path": "data/facturas.xlsx",
   "output_folder": "salidas",
-  "ollama_model": "llama3",
+  "ollama_model": "llama3.2:3b",
   "use_openvino": false,
   "openvino_model_path": "",
   "openvino_tokenizer": "",

@@ -1,7 +1,7 @@
 {
   "watch_folder": "C:\\Users\\grupo\\Documents\\agentes ollama\\archivos\\watch",
   "archive_folder": "C:\\Users\\grupo\\Documents\\agentes ollama\\archivos\\archive",
-  "ollama_model": "llama3",
+  "ollama_model": "llama3.2:3b",
   "use_openvino": false,
   "ollama_options": {
     "num_gpu": 1,
