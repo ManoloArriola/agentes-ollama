@@ -7,9 +7,7 @@
   "openvino_tokenizer": "",
   "openvino_device": "CPU",
   "ollama_options": {
-    "num_gpu": 1,
-    "main_gpu": 0,
-    "low_vram": true,
-    "num_thread": 4
+    "num_gpu": 0,
+    "num_thread": 2
   }
 }
