@@ -1,8 +1,8 @@
 {
-  "imap_server": "sishost.mail.pairserver.com",
+  "imap_server": "xxxxxxxxx",
   "imap_port": 993,
-  "email": "marriola@gruposis.com",
-  "password": "Grup0s1sEje",
+  "email": "xxxxxxx",
+  "password": "XXXXXxxxx",
   "ollama_model": "llama3.2:3b",
   "summary_prompt": "Resume el contenido del correo en español con los puntos más importantes. y organizalos por secciones: 1. Asunto, 2. Remitente, 3. Fecha, 4. Contenido del correo, 5. Adjuntos (si los hay).",
   "use_openvino": false,
@@ -11,6 +11,6 @@
   "openvino_device": "CPU",
   "ollama_options": {
     "num_gpu": 0,
-    "num_thread": 2
+    "num_thread": 4
   }
 }
